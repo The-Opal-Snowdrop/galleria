@@ -144,17 +144,24 @@
     <div id="caption"></div>
   </div>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/theopalsnowdrop@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="thankyou.html">
-      <button type="submit">Send</button>
-    </form>
+<section id="contact" class="contact-form">
+  <h2>Contact Me</h2>
+  <form id="contactForm" action="https://formsubmit.co/theopalsnowdrop@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <!-- Hidden FormSubmit fields -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New message from The Opal Snowdrop portfolio!">
+    <input type="hidden" name="_template" value="box">
+
+    <button type="submit">Send Message</button>
+  </form>
+  <p id="formSuccess" style="display:none; color: green; font-weight: bold; margin-top: 1rem;">
+    Thank you! Your message has been sent.
+  </p>
+</section>
   </section>
   <footer>
     <p>© 2025 <strong>The Opal Snowdrop</strong> • <a href="mailto:theopalsnowdrop@gmail.com">Contact Me</a></p>
