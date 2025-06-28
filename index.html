@@ -6,102 +6,12 @@
   <title>The Opal Snowdrop</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      background: #fffaf7;
-      font-family: 'Inter', sans-serif;
-      color: #333;
-      margin: 0;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 3rem 2rem;
-      background: #f9f9f9;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-      background: white;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-    }
-
-    .gallery-item img,
-    .gallery-item video {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 12px;
-    }
-
-    .gallery-item video {
-      pointer-events: none;
-    }
-
-    .gallery-item:hover video {
-      pointer-events: auto;
-    }
-
-    .video-section h2 {
-      text-align: center;
-      margin: 2rem auto 1rem;
-      font-size: 2rem;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .contact-form {
-      background: #f1f1f1;
-      padding: 3rem 2rem;
-      text-align: center;
-    }
-
-    .contact-form form {
-      max-width: 600px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      padding: 1rem;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      width: 100%;
-    }
-
-    .contact-form button {
-      background: #333;
-      color: white;
-      padding: 1rem;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    .contact-form button:hover {
-      background: #555;
-    }
-  </style>
 </head>
 <body>
 
   <header>
     <div class="logo-container">
-      <img src="assets/logo.jpg" alt="The Opal Snowdrop Logo" class="logo" />
+      <img src="assets/logo.jpg" alt="The Opal Snowdrop Logo" class="logo-img" />
       <h1>The Opal Snowdrop</h1>
     </div>
     <nav>
@@ -119,16 +29,16 @@
   </section>
 
   <section id="projects" class="gallery">
-    <div class="gallery-item"><img src="assets/p1.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p2.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p3.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p4.jpg"   /></div>
-    <div class="gallery-item"><img src="assets/p5.jpg"   /></div>
-    <div class="gallery-item"><img src="assets/p6.jpg" /></div>
-    <div class="gallery-item"><img src="assets/p7.JPG"  /></div>
-    <div class="gallery-item"><img src="assets/p8.JPG"   /></div>
-    <div class="gallery-item"><img src="assets/p9.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p10.JPG"   /></div>
+    <div class="gallery-item"><img src="assets/p1.jpg" alt="Art 1" /></div>
+    <div class="gallery-item"><img src="assets/p2.jpg" alt="Art 2" /></div>
+    <div class="gallery-item"><img src="assets/p3.jpg" alt="Art 3" /></div>
+    <div class="gallery-item"><img src="assets/p4.jpg" alt="Art 4" /></div>
+    <div class="gallery-item"><img src="assets/p5.jpg" alt="Art 5" /></div>
+    <div class="gallery-item"><img src="assets/p6.jpg" alt="Art 6" /></div>
+    <div class="gallery-item"><img src="assets/p7.JPG" alt="Art 7" /></div>
+    <div class="gallery-item"><img src="assets/p8.JPG" alt="Art 8" /></div>
+    <div class="gallery-item"><img src="assets/p9.jpg" alt="Art 9" /></div>
+    <div class="gallery-item"><img src="assets/p10.JPG" alt="Art 10" /></div>
   </section>
 
   <section id="videos" class="gallery video-section">
@@ -138,41 +48,29 @@
     <div class="gallery-item"><video muted loop><source src="assets/Video9.mp4" type="video/mp4"></video></div>
   </section>
 
-  <div id="modal" class="modal">
-    <span class="close" id="modal-close">&times;</span>
-    <img class="modal-content" id="modal-img" />
-    <div id="caption"></div>
-  </div>
+  <section id="contact" class="contact-form">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="https://formsubmit.co/ajax/theopalsnowdrop@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
 
-<section id="contact" class="contact-form">
-  <h2>Contact Me</h2>
-  <form id="contactForm" action="https://formsubmit.co/theopalsnowdrop@gmail.com" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <!-- Hidden Fields -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New message from The Opal Snowdrop portfolio!">
+      <input type="hidden" name="_template" value="box">
 
-    <!-- Hidden FormSubmit fields -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_subject" value="New message from The Opal Snowdrop portfolio!">
-    <input type="hidden" name="_template" value="box">
-
-    <button type="submit">Send Message</button>
-  </form>
-  <p id="formSuccess" style="display:none; color: green; font-weight: bold; margin-top: 1rem;">
-    Thank you! Your message has been sent.
-  </p>
-</section>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="formSuccess" style="display:none; color: green; font-weight: bold; margin-top: 1rem;">
+      Thank you! Your message has been sent.
+    </p>
   </section>
+
   <footer>
     <p>© 2025 <strong>The Opal Snowdrop</strong> • <a href="mailto:theopalsnowdrop@gmail.com">Contact Me</a></p>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    document.querySelectorAll('video').forEach(video => {
-      video.addEventListener('mouseenter', () => video.play());
-      video.addEventListener('mouseleave', () => video.pause());
-    });
-  </script>
 </body>
 </html>
