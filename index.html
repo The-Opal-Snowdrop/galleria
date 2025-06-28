@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Opal Snowdrop</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="assets/logo.jpg" alt="The Opal Snowdrop Logo" class="logo" />
+      <h1>The Opal Snowdrop</h1>
+    </div>
+    <nav>
+      <a href="#projects">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Elegant, Expressive, Eternal</h2>
+      <p>Showcasing creative brilliance through curated visuals and artistic expressions.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="gallery">
+    <div class="gallery-item"><img src="assets/p1.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p2.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p3.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p4.jpg"  /></div>
+    <div class="gallery-item"><img src="assets/p5.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p6.jpg"  /></div>
+    <div class="gallery-item"><img src="assets/p7.jpg"  /></div>
+    <div class="gallery-item"><img src="assets/p8.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p9.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p10.jpg"   /></div>
+  </section>
+
+  <div id="modal" class="modal">
+    <span class="close" id="modal-close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+    <div id="caption"></div>
+  </div>
+
+  <section id="contact" class="contact-form">
+    <h2>Contact Me</h2>
+    <form action="https://formsubmit.co/theopalsnowdrop@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <!-- FormSubmit hidden inputs -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New message from The Opal Snowdrop portfolio!">
+      <input type="hidden" name="_template" value="box">
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 <strong>The Opal Snowdrop</strong> • <a href="mailto:theopalsnowdrop@gmail.com">Contact Me</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
