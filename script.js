@@ -1,57 +1,37 @@
-// Modal functionality (if you still use it)
-const modal = document.getElementById("modal");
-const modalImg = document.getElementById("modal-img");
-const captionText = document.getElementById("caption");
-const closeBtn = document.getElementById("modal-close");
-
-if (modal) {
-  document.querySelectorAll(".gallery-item img").forEach((img) => {
-    img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      captionText.textContent = img.alt || "";
-    });
-  });
-
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-  });
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.style.display = "none";
-    }
-  });
-}
-
-// Video play on hover
-document.querySelectorAll("video").forEach((video) => {
+// Video hover play/pause
+document.querySelectorAll("video").forEach(video => {
   video.addEventListener("mouseenter", () => video.play());
   video.addEventListener("mouseleave", () => video.pause());
 });
 
-// Contact form AJAX submit with thank-you
-const contactForm = document.getElementById("contactForm");
-if (contactForm) {
-  contactForm.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const formData = new FormData(contactForm);
+// Form submit handling
+const form = document.getElementById("contactForm");
+const successMsg = document.getElementById("formSuccess");
 
-    fetch(contactForm.action, {
-      method: contactForm.method,
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
       body: formData,
-      headers: { Accept: "application/json" },
+      headers: {
+        'Accept': 'application/json'
+      }
     })
-      .then((response) => {
-        if (response.ok) {
-          contactForm.reset();
-          document.getElementById("formSuccess").style.display = "block";
-        } else {
-          alert("Something went wrong. Please try again.");
-        }
-      })
-      .catch(() => {
-        alert("Submission failed. Check your connection and try again.");
-      });
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        successMsg.style.display = "block";
+      } else {
+        alert("Form submission failed. Please try again.");
+      }
+    })
+    .catch(error => {
+      console.error("Error:", error);
+      alert("There was a problem submitting the form.");
+    });
   });
 }
