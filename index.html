@@ -134,6 +134,35 @@
     .contact-form button:hover {
       background: #555;
     }
+
+    .team {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+    }
+
+    .team h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .team-member {
+      max-width: 300px;
+      margin: auto;
+    }
+
+    .team-member img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member p {
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -166,17 +195,25 @@
     </p>
   </section>
 
+  <section class="team">
+    <h2>Meet the Creator</h2>
+    <div class="team-member">
+      <img src="assets/profile.jpg" alt="Portrait of the Creator">
+      <p>Johar M. Ashfaque — Visionary behind The Opal Snowdrop</p>
+    </div>
+  </section>
+
   <section id="projects" class="gallery">
-    <div class="gallery-item"><img src="assets/p1.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p2.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p3.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p4.jpg"   /></div>
-    <div class="gallery-item"><img src="assets/p5.jpg"   /></div>
+    <div class="gallery-item"><img src="assets/p1.jpg" /></div>
+    <div class="gallery-item"><img src="assets/p2.jpg" /></div>
+    <div class="gallery-item"><img src="assets/p3.jpg" /></div>
+    <div class="gallery-item"><img src="assets/p4.jpg" /></div>
+    <div class="gallery-item"><img src="assets/p5.jpg" /></div>
     <div class="gallery-item"><img src="assets/p6.jpg" /></div>
-    <div class="gallery-item"><img src="assets/p7.JPG"  /></div>
-    <div class="gallery-item"><img src="assets/p8.JPG"   /></div>
-    <div class="gallery-item"><img src="assets/p9.jpg"  /></div>
-    <div class="gallery-item"><img src="assets/p10.JPG"   /></div>
+    <div class="gallery-item"><img src="assets/p7.JPG" /></div>
+    <div class="gallery-item"><img src="assets/p8.JPG" /></div>
+    <div class="gallery-item"><img src="assets/p9.jpg" /></div>
+    <div class="gallery-item"><img src="assets/p10.JPG" /></div>
   </section>
 
   <section id="videos" class="gallery video-section">
@@ -198,12 +235,9 @@
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-
-      <!-- Hidden FormSubmit fields -->
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_subject" value="New message from The Opal Snowdrop portfolio!">
       <input type="hidden" name="_template" value="box">
-
       <button type="submit">Send Message</button>
     </form>
     <p id="formSuccess" style="display:none; color: green; font-weight: bold; margin-top: 1rem;">
