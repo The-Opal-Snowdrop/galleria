@@ -53,49 +53,94 @@
       margin-bottom: 1rem;
     }
 
-    .gallery {
+    .blog-section {
+      padding: 3rem 2rem;
+      background: #fff;
+      text-align: center;
+    }
+
+    .blog-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .blog-posts {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .blog-post {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+
+    .blog-post h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .blog-post p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .blog-post a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #333;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border 0.3s ease;
+    }
+
+    .blog-post a:hover {
+      border-bottom: 1px solid #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
       padding: 3rem 2rem;
       background: #f9f9f9;
     }
 
     .gallery-item {
-      position: relative;
-      aspect-ratio: 4 / 3;
       overflow: hidden;
-      border-radius: 16px;
+      border-radius: 12px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
       background: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .gallery-item:hover {
-      transform: translateY(-4px);
+      transform: scale(1.05);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
     }
 
     .gallery-item img,
     .gallery-item video {
       width: 100%;
-      height: 100%;
+      height: 300px;
       object-fit: cover;
-      border-radius: 16px;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img,
-    .gallery-item:hover video {
-      transform: scale(1.03);
+      display: block;
+      border-radius: 12px;
     }
 
     .gallery-item video {
       pointer-events: none;
     }
+
     .gallery-item:hover video {
       pointer-events: auto;
     }
@@ -184,6 +229,24 @@
       font-weight: 500;
       color: #444;
     }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    footer a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -194,6 +257,7 @@
       <h1>The Opal Snowdrop</h1>
     </div>
     <nav>
+      <a href="#blog">Blog</a>
       <a href="#projects">Gallery</a>
       <a href="#videos">Videos</a>
       <a href="#contact">Contact</a>
@@ -203,6 +267,23 @@
   <section class="hero">
     <div class="hero-text">
       <h2>Elegant, Expressive, Eternal</h2>
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section" id="blog">
+    <h2>Latest News & Stories</h2>
+    <div class="blog-posts">
+      <div class="blog-post">
+        <h3>Behind the Lens: A Creator’s Journal</h3>
+        <p>Peek into our creative process and how we breathe life into each visual. Discover what inspires us daily.</p>
+        <a href="#">Read more →</a>
+      </div>
+      <div class="blog-post">
+        <h3>The Story of 'Silent Light'</h3>
+        <p>Explore the story behind one of our most viewed works — a tale of light, time, and stillness.</p>
+        <a href="#">Read more →</a>
+      </div>
     </div>
   </section>
 
@@ -240,7 +321,6 @@
     <div class="gallery-item"><img src="assets/p8.JPG" /></div>
     <div class="gallery-item"><img src="assets/p9.jpg" /></div>
     <div class="gallery-item"><img src="assets/p10.JPG" /></div>
-    <div class="gallery-item"><img src="assets/p13.jpg" /></div>
   </section>
 
   <section id="videos" class="gallery video-section">
